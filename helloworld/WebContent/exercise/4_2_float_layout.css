@@ -1,0 +1,17 @@
+/*
+<link rel= "stylesheet" href="4_2_float_layout.css">
+*/
+
+.wrap > div {
+  border:1px solid gray;
+  width:100px;
+  height:100px;
+  margin:10px;
+  float:left;
+}
+
+.wrap > div:nth-child(1) {
+  color:red;
+  /*float:left;*/
+  margin-left:100px;
+}
