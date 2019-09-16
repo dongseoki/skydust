@@ -53,7 +53,6 @@
 
   <script>
   var chartDrowFun = {
-
     chartDrow : function(){
 	var queryObject = "";
     	var queryObjectLen = "";
@@ -71,7 +70,6 @@
 	      alert('server msg : ' + xhr.status)
            }
     	});
-
         //날짜형식 변경하고 싶으시면 이 부분 수정하세요.
         //var chartDateformat 	= 'yyyy년MM월dd일';
         var chartDateformat 	= 'M.dd. HH:MM';
@@ -79,10 +77,7 @@
         var chartLineCount    = 10;
         //컨트롤러 바 차트의 라인 수
         var controlLineCount	= 10;
-
-
         function drawDashboard() {
-
           var data = new google.visualization.DataTable();
           data.addColumn('datetime', 'mdatecreated');
           data.addColumn('number', 'Drnpm10Value');
@@ -100,7 +95,6 @@
 	      //alert(mdatecreated + ' ' + Drnpm10Value + ' ' + Drnpm25Value + ' ' + pm10Value + ' ' + pm25Value);
               data.addRows([ [ new Date(mdatecreated), Drnpm10Value, Drnpm25Value, pm10Value, pm25Value ] ]);
           }
-
           var chart = new google.visualization.ChartWrapper({
               chartType   : 'LineChart',
               containerId : 'lineChartArea', //라인 차트 생성할 영역
@@ -133,7 +127,6 @@
                   }
               }
           });
-
           var control = new google.visualization.ControlWrapper({
               controlType: 'ChartRangeFilter',
               containerId: 'controlsArea',  //control bar를 생성할 영역
@@ -154,22 +147,17 @@
                   filterColumnIndex: 0
               }
           });
-
           var date_formatter = new google.visualization.DateFormat({ pattern: chartDateformat});
           date_formatter.format(data, 0);
-
           var dashboard = new google.visualization.Dashboard(document.getElementById('Line_Controls_Chart'));
           window.addEventListener('resize', function() { dashboard.draw(data); }, false); //화면 크기에 따라 그래프 크기 변경
           dashboard.bind([control], [chart]);
           dashboard.draw(data);
-
         }
 	sleep(1000);
         google.charts.setOnLoadCallback(drawDashboard);
-
       }
     }
-
 $(document).ready(function(){
     google.charts.load('current', {
        'packages':['line','controls']
