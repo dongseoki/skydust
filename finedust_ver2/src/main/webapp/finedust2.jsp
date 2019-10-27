@@ -82,8 +82,8 @@ for(int i=0;i<=23;i++) {
           var data = new google.visualization.DataTable();
           //그래프에 표시할 컬럼 추가
           data.addColumn('datetime' , '날짜');
+          data.addColumn('number', 'Drnpm2.5Value');
           data.addColumn('number', 'Drnpm10Value');
-          data.addColumn('number', 'Drnpm25Value');
           //data.addColumn('number', 'pm10Value');
           //data.addColumn('number', 'pm25Value');
  

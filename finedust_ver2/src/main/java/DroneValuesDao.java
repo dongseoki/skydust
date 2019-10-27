@@ -21,7 +21,8 @@ public class DroneValuesDao {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "select  AVG(pm2), AVG(pm10) from finedust where keycode like '"+date+"_____';";
+			String sql = "select  AVG(pm2), AVG(pm10) from finedust where keycode like '"+date+"%';";
+			System.out.println(sql);
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 

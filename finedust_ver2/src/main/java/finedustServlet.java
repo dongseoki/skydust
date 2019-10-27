@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,15 +34,18 @@ public class finedustServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DroneValuesDao dao = new DroneValuesDao();
-		SimpleDateFormat formatter= new SimpleDateFormat("yyyyMMddhh");
+		Locale locale = Locale.KOREA;
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyyMMddHH");
         Date date = new Date(System.currentTimeMillis());
         
         Calendar cal = new GregorianCalendar();
-        cal.add(Calendar.HOUR, +8);
+        //cal.add(Calendar.HOUR, 0);
+        //cal.add(Calendar.HOUR, -1);
+        cal.add(Calendar.HOUR, -24);
         for(int i=0;i<24;i++){
         	DroneValues dronevalues = dao.getDroneValue(""+formatter.format(cal.getTime()));
 			request.setAttribute(""+i, dronevalues.toString());
-        	cal.add(Calendar.HOUR, -1);
+        	cal.add(Calendar.HOUR, +1);
         }
 		//RequestDispatcher requestDispatcher = request.getRequestDispatcher("/finedust.jsp");
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/finedust2.jsp");

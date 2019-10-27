@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>kr.or.connect</groupId>
-  <artifactId>finedust</artifactId>
+  <artifactId>finedust_ver2</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>finedust Maven Webapp</name>
+  <name>finedust_ver2 Maven Webapp</name>
   <url>http://maven.apache.org</url>
 <properties>
 		<!-- web.xml 파일을 삭제해도 eclipse에서 오류가 발생하지 않는다. -->
@@ -24,7 +24,11 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.4</version>
 		</dependency>
-
+		<dependency>
+   <groupId>org.jsoup</groupId>
+   <artifactId>jsoup</artifactId>
+   <version>1.7.2</version>
+</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -46,7 +50,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>finedust</finalName>
+		<finalName>finedust_ver2</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
