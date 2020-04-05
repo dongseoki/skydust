@@ -24,3 +24,6 @@
 
 ## 저장소 
 : [https://github.com/dongseoki/skydust](https://github.com/dongseoki/skydust)
+
+## 소개영상
+링크 : https://www.youtube.com/watch?v=JSPTZBSXeH8&feature=youtu.be
